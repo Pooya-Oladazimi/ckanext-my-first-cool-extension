@@ -85,6 +85,7 @@ setup(
     entry_points='''
         [ckan.plugins]
         my_cool_new_plugin=ckanext.my_first_cool_extension.plugin:MyCoolPlugin
+        my_cool_second_plugin=ckanext.my_first_cool_extension.plugin2:MySecondPlugin
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
