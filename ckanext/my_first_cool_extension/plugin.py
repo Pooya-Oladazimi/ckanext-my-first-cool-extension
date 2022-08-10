@@ -26,4 +26,11 @@ class MyCoolPlugin(plugins.SingletonPlugin):
             methods=['GET']
         )
 
+        blueprint.add_url_rule(
+            u'/cool_plugin/show_something',
+            u'show_something',
+            MyLogic.show_something,
+            methods=['GET']
+        )
+
         return blueprint
