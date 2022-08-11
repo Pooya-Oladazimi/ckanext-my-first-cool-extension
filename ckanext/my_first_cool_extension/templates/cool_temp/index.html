@@ -1,5 +1,13 @@
-{% snippet "snippets/cool_plugin_simple_struc.html", input="My first ckan template!" %}
-<br>
-{% for n in names %}
-    {% snippet "snippets/cool_plugin_simple_struc.html", input=n %}
-{% endfor %}
+{% extends "page.html" %}
+
+{% block secondary %}
+
+{% endblock  %}
+
+{% block primary %}
+    {% snippet "snippets/cool_plugin_simple_struc.html", input="My first ckan template!" %}
+    <br>
+    {% for n in names %}
+        {% snippet "snippets/cool_plugin_simple_struc.html", input=n %}
+    {% endfor %}
+{% endblock %}}
