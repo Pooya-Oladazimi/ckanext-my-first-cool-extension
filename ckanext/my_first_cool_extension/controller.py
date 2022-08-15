@@ -1,6 +1,8 @@
 # encoding: utf-8
 
+from random import random
 from flask import render_template
+import random
 
 class MyLogic():
 
@@ -12,3 +14,7 @@ class MyLogic():
 
     def do_something(name):
         return "Welcome to ckan {}!".format(name)
+    
+
+    def help_it(num):
+        return random.randint(num, num + 100)

@@ -41,4 +41,4 @@ class MyCoolPlugin(plugins.SingletonPlugin):
     #ITemplateHelpers
 
     def get_helpers(self):
-        return {'format_authors_name_for_edit': LinkReferenceController.format_authors_name_for_edit}
+        return {'help_me': MyLogic.help_it}
