@@ -1,9 +1,12 @@
 {% ckan_extends %}
 
 
-{% block package_notes %}    
+{% block package_notes %}
+    {% asset 'ckanext-cool-plugin/cool-css' %}
+    {% asset 'ckanext-cool-plugin/cool-js' %}   
+    
     <div class="custom-content">
-        <a href="#" class="btn btn-primary">New button!</a>        
+        <a href="#" class="btn btn-primary" id="my-cool-buton">New button!</a>        
     </div>
     <hr>
     {{ super() }}

@@ -7,12 +7,14 @@ from ckanext.my_first_cool_extension.controller import MyLogic
 class MyCoolPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IBlueprint)
+    plugins.implements(plugins.ITemplateHelpers)
 
     # IConfigurer
 
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates/cool_temp')
         toolkit.add_public_directory(config_, 'public/cool_static')
+        toolkit.add_resource('public/cool_static', 'ckanext-cool-plugin')
     
 
     def get_blueprint(self):
@@ -34,3 +36,9 @@ class MyCoolPlugin(plugins.SingletonPlugin):
         )
 
         return blueprint
+    
+
+    #ITemplateHelpers
+
+    def get_helpers(self):
+        return {'format_authors_name_for_edit': LinkReferenceController.format_authors_name_for_edit}

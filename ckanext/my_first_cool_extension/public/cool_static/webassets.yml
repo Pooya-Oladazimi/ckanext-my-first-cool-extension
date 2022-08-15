@@ -1,0 +1,13 @@
+cool-css:
+  output: ckanext-cool-plugin/%(version)s_my.css
+  contents:
+    - cool.css
+
+cool-js:  
+  output: ckanext-cool-plugin/%(version)s_my.js
+  extra:
+    preload:      
+      - vendor/jquery
+      - vendor/jquery.ui.core
+  contents:
+    - cool.js
