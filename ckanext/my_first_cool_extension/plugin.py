@@ -29,11 +29,40 @@ class MyCoolPlugin(plugins.SingletonPlugin):
         )
 
         blueprint.add_url_rule(
-            u'/cool_plugin/show_something',
-            u'show_something',
-            MyLogic.show_something,
+            u'/cool_plugin/add',
+            u'add',
+            MyLogic.add,
             methods=['GET']
         )
+
+        blueprint.add_url_rule(
+            u'/cool_plugin/get',
+            u'get',
+            MyLogic.get,
+            methods=['GET']
+        )
+
+        blueprint.add_url_rule(
+            u'/cool_plugin/update',
+            u'update',
+            MyLogic.update,
+            methods=['GET']
+        )
+
+        blueprint.add_url_rule(
+            u'/cool_plugin/delete',
+            u'delete',
+            MyLogic.delete,
+            methods=['GET']
+        )
+
+        blueprint.add_url_rule(
+            u'/cool_plugin/do_something/<name>',
+            u'do_something',
+            MyLogic.do_something,
+            methods=['GET']
+        )
+
 
         return blueprint
     
