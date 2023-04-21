@@ -63,6 +63,13 @@ class MyCoolPlugin(plugins.SingletonPlugin):
             methods=['GET']
         )
 
+        blueprint.add_url_rule(
+            u'/cool_plugin/only_admin_can_access_me',
+            u'only_admin_can_access_me',
+            MyLogic.only_admin_can_access_me,
+            methods=['GET']
+        )
+
 
         return blueprint
     

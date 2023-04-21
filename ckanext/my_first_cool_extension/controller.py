@@ -4,6 +4,9 @@ from random import random
 from flask import render_template
 import random
 from datetime import datetime as _time
+import ckan.plugins.toolkit as toolkit
+import ckan.model as model
+import ckan.logic as logic
 from ckanext.my_first_cool_extension.models.cool_plugin_table import CoolPluginTable
 
 class MyLogic():
@@ -60,3 +63,14 @@ class MyLogic():
             res.commit()
         
         return "Success!"
+
+
+    def only_admin_can_access_me():
+        context = {'model': model,
+                   'user': toolkit.g.user, 'auth_user_obj': toolkit.g.userobj}
+        try:
+            logic.check_access('sysadmin', context, {})
+        except logic.NotAuthorized:
+            toolkit.abort(403, 'Need to be system administrator to administer')
+        
+        return "Hello Admin!"
