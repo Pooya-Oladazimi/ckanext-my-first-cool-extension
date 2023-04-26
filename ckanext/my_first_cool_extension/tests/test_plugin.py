@@ -24,7 +24,7 @@ class TestCoolPlugin(object):
         dataset = factories.Dataset(owner_org=owner_org['id'])       
         self.post_data['dataset_id'] = dataset['id']                
         response = app.post(self.dest_url, data=self.post_data)        
-        assert "You need to authenticate before accessing this function" in response.body
+        assert "Need to be system administrator to administer" in response.body
 
     
     def test_with_admin_user(self, app):       
