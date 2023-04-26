@@ -8,7 +8,7 @@ import ckan.lib.create_test_data as ctd
 @pytest.mark.usefixtures('clean_db', 'with_plugins', 'with_request_context')
 class TestCoolPlugin(object):    
     @pytest.fixture(autouse=True)
-    def intial(self):
+    def initial(self):
         ctd.CreateTestData.create()
         self.sysadmin_user = model.User.get("testsysadmin")
         self.post_data = {}
