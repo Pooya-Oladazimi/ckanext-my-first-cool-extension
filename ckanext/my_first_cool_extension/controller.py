@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 from random import random
-from flask import render_template
+from flask import render_template, request
 import random
 from datetime import datetime as _time
 import ckan.plugins.toolkit as toolkit
@@ -73,4 +73,5 @@ class MyLogic():
         except logic.NotAuthorized:
             toolkit.abort(403, 'Need to be system administrator to administer')
         
-        return "Hello Admin!"
+        dataset_id = request.form.get('dataset_id')
+        return "Hello Admin with Dataset {}!".format(dataset_id)

@@ -67,7 +67,7 @@ class MyCoolPlugin(plugins.SingletonPlugin):
             u'/cool_plugin/only_admin_can_access_me',
             u'only_admin_can_access_me',
             MyLogic.only_admin_can_access_me,
-            methods=['GET']
+            methods=['POST']
         )
 
 
